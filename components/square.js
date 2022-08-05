@@ -1,38 +1,39 @@
-import React from "react";
-import {view, stylesheet } from 'react-native';
+import React, {useState, useEffect} from "react";
+import {View, StyleSheet} from 'react-native';
 
 const Square = () => {
-       const [moleactive, setMoleactive] = usestate(flase)
-        
-       const ramdomTime = Math.random() *20000
-        
-       useEffect(() => {
-           const TimeID = setInterval(() => {
-            setMoleactive(true)
-            setTimeout(() => {setmoleActive(false)},800)
-           },randomtime)
-           setTimeout(endGame, )
+    const [moleActive, setMoleActive]= useState(false)
 
-        } [])
+    const randomTime = Math.random() * 20000
 
+    useEffect(() =>{
+        const timerId = setInterval(() => {
+            setMoleActive (true)
+            setTimeout (() => {setMoleActive(false)},800)         
+        },randomTime)
+        setTimeout
+    },[])
 
-
-
-       return(
-          <view styles={moleactive? styles.mole : styles.square}></view>
-
-     ) 
+    return(
+        <View style = {moleActive? styles.mole : styles.square}></View>
+    )
 }
 
 
-const styles = stylesheet.create({
+const styles = StyleSheet.create({
     square: {
         flex: 1,
-        minwidth: 80,
+        minWidth:80,
         minHeight: 80,
         margin: 10,
-        backgroundcolor: 'red',
+        backgroundColor: 'red',
+    },
+    mole: {
+        flex: 1,
+        minWidth:80,
+        minHeight: 80,
+        margin: 10,
+        backgroundColor: 'blue', 
     }
-})
-
-export default square
+});
+export default Square
